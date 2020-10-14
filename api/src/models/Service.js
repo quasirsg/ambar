@@ -2,11 +2,11 @@ const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
     sequelize.define("service", {
-      equipo: {
+      device: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      modelo: {
+      model: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -14,15 +14,15 @@ module.exports = (sequelize) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      descripcion_falla: {
+      description: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      repuesto: {
+      replacement: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      monto: {
+      total: {
         type: DataTypes.DOUBLE,
         allowNull: false,
       },

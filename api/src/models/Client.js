@@ -6,11 +6,11 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      apellido: {
+      surname: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      direccion: {
+      adress: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -18,7 +18,7 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      numero_telefono: {
+      phone_number: {
         type: DataTypes.STRING,
         allowNull: false,
       }

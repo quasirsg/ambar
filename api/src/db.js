@@ -17,7 +17,7 @@ const basename = path.basename(__filename);
 const modelDefiners = [];
 
 // Leemos todos los archivos de la carpeta Models, los requerimos y agregamos al arreglo modelDefiners
-fs.readdirSync(path.join(__dirname, "./models"))
+fs.readdirSync(path.join(__dirname, "/models"))
   .filter(
     (file) =>
       file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
@@ -42,13 +42,12 @@ const { Client,Service} = sequelize.models;
 
 
 // // Aca vendrian las relaciones
-
 // uno a muchos, 1 a N
 // Cliente va a tener muchos servicios o prestaciones
 // Se añade una clave client_id a la tabla services
 Client.hasMany(Service);
 
-Service.belongsTo(Client);
+Service.belongsTo(Client,{as:'client'});
 
 
 

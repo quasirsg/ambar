@@ -1,12 +1,18 @@
-const express = require('express');  //Cargar framework de nodejs
-const router = express.Router();  //Cargar nucleo router
+const { Router } = require("express");
+// // import all routers;
+const clientRouter = require('./client.js');
+const serviceRouter = require('./service.js');
+// const categoryRouter = require('./category.js');
+// const searchRouter = require('./search.js');
 
-//Importar controlador
-router.get('/users',(req,res)=>{
-    return res.status(200).send({
-        status : 'success',
-        message : 'Generando Token'
-    });
-})
+const router = Router();
+
+// load each router on a route
+// i.e: router.use('/auth', authRouter);
+// router.use('/auth', authRouter);
+
+router.use('/clients', clientRouter);
+router.use('/servicios', serviceRouter);
+// router.use('/search', searchRouter);
 
 module.exports = router;
